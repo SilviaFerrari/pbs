@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panettoni by Silvia</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Allison' rel='stylesheet'>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo title-logo">Panettoni by Silvia</a>
+            <ul class="nav-menu">
+
+                <!-- Se l'utente è autenticato -->
+                <li th:if="${#authorization.expression('isAuthenticated()')}">
+                    <span>Benvenuto, <strong th:text="${#authentication.name}">Utente</strong>!</span>
+                </li>
+                <li th:if="${#authorization.expression('isAuthenticated()')}">
+                    <form th:action="@{/logout}" method="post">
+                        <button class="btn-link" type="submit">
+                            Logout
+                        </button>
+                    </form>
+                </li>
+
+                <!-- Se l'utente NON è autenticato -->
+                <li th:if="${#authorization.expression('!isAuthenticated()')}">
+                    <a class="btn-link" href="/login">Login</a>
+                </li>
+                <li th:if="${#authorization.expression('!isAuthenticated()')}">
+                    <a class="btn-link" href="/register">Registrati</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Parallax -->
+    <div class="parallax">
+        <div class="welcome-text title-logo">
+            <h1>Panettoni</h1>
+            <h2> by Silvia</h2>
+            <img src="/images/logo.png" alt="Panettoni logo" />
+        </div>
+    </div>
+
+    <!-- Presentazione azienda -->
+    <section class="about">
+        <h2>La nostra storia</h2>
+        <p>Io non sapevo di avere un'azienda di panettoni. Io che per tutta la vita sono stata team pandoro.
+            Poi un fatidico giorno del novembre 2022, ho scoperto di produrre panettoni. Da allora la mia vita è cambiata.</p>
+        <p>Di questo successo devo ringraziare la perfida creatività di <strong>Bonny</strong> e l'entusiasmo di <strong>Andrea</strong>
+            (aka Pingu, uomo-domanda e migliore amico di Calderara) che non ha mai, e sottolineo MAI, dubitato dell'esistenza di questa realtà.</p>
+
+        <p>Un ringraziamento anche <strong>Vincenzo</strong> che ha disegnato il logo e infine a <strong>Fabrizio</strong> (aka Teddy),
+            che si è premurato di pubblicizzare questa piccola realtà a chi l'ha fatta diventare un ricordo indelebile.</p>
+        <p>Senza di loro, oggi tutto questo non sarebbe stato possibile. Fortuna o sfortuna? <br> A voi deciderlo.</p>
+    </section>
+
+    <!-- Prodotti -->
+    <section class="products">
+        <h2>I nostri prodotti</h2>
+        <div class="product-grid">
+            <div class="product-card" th:each="product : ${products}">
+                <img th:src="@{${product.imageUrl}}" th:alt="${product.name}" />
+                <h3 th:text="${product.name}"></h3>
+                <p th:text="${product.description}"></p>
+                <span th:text="${product.price + ' €'}"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Panettoni by Silvia</h3>
+                <p>Tutte le immagini presenti nel sito sono piratate e
+                    senza alcun mio diritto di possederle. Le foto e i contatti
+                    appartengono ad un vero panificio che adoro vicino casa mia.
+                </p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contatti</h3>
+                <p>Email: info@panettonibysilvia.it</p>
+                <p>Telefono: +39 346 636 1487</p>
+                <p>Indirizzo: Strada Paverazzi, 1/B, 42027 Villa Aiola RE</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Panettoni by Silvia. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+</body>
+</html>
