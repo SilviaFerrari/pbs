@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{main-layout.html}">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" th:href="@{/css/login_reg.css}">
 </head>
 <body>
+<section layout:fragment="content">
     <div class="container">
         <h2>Login</h2>
         <form th:action="@{/login}" method="post">
@@ -22,5 +25,6 @@
             <button type="submit">Accedi</button>
         </form>
     </div>
+</section>
 </body>
 </html>

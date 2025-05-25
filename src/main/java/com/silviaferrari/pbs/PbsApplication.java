@@ -2,6 +2,7 @@ package com.silviaferrari.pbs;
 
 import com.silviaferrari.pbs.model.Product;
 import com.silviaferrari.pbs.repository.ProductRepository;
+import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,10 +15,13 @@ public class PbsApplication {
         SpringApplication.run(PbsApplication.class, args);
     }
 
-    // indica a Spring di creare questo oggetto all'avvio
     @Bean
+    public LayoutDialect layoutDialect() {
+        return new LayoutDialect();
+    }
 
     // interfaccia che esegue il codice dopo che l'app si avvia
+    @Bean
     CommandLineRunner run(ProductRepository repo) {
         return args -> {
             // alcuni prodotti vengono salvati nel database

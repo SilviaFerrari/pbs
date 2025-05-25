@@ -6,20 +6,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 import java.util.List;
 
 @Controller
-public class HomeController {
+public class IndexController {
     /* indica a Spring di iniettare automaticamente un'istanza
     di una classe dove serve e si evita di creare nuovi oggetti con new
     Spring gestisce i componenti e li collega dovo c'è questa notazione */
     private final ProductRepository productRepository;
 
-    public HomeController(ProductRepository productRepository) {
+    public IndexController(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 

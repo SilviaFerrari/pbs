@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout page</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Allison' rel='stylesheet'>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo title-logo">Panettoni by Silvia</a>
+
+      <ul class="nav-menu">
+        <!-- Se l'utente è autenticato -->
+        <li th:if="${#authorization.expression('isAuthenticated()')}">
+          <span>Benvenuto, <strong th:text="${#authentication.name}">Utente</strong>!</span>
+        </li>
+        <li th:if="${#authorization.expression('isAuthenticated()')}">
+          <form th:action="@{/logout}" method="post">
+            <button class="btn-link" type="submit">
+              Logout
+            </button>
+          </form>
+        </li>
+
+        <!-- Se l'utente NON è autenticato -->
+        <li th:if="${#authorization.expression('!isAuthenticated()')}">
+          <a class="btn-link" href="/login">Login</a>
+        </li>
+        <li th:if="${#authorization.expression('!isAuthenticated()')}">
+          <a class="btn-link" href="/register">Registrati</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section layout:fragment="content"></section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-about">
+        <h3>Panettoni by Silvia</h3>
+        <p>Tutte le immagini presenti nel sito sono piratate e
+          senza alcun mio diritto di possederle. Le foto e i contatti
+          appartengono ad un vero panificio che adoro vicino casa mia.
+        </p>
+      </div>
+      <div class="footer-contact">
+        <h3>Contatti</h3>
+        <p>Email: info@panettonibysilvia.it</p>
+        <p>Telefono: +39 346 636 1487</p>
+        <p>Indirizzo: Strada Paverazzi, 1/B, 42027 Villa Aiola RE</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Panettoni by Silvia. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

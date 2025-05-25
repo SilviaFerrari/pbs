@@ -1,0 +1,109 @@
+/* Parallax */
+
+.parallax {
+    background-image: url('../images/parallax.jpg');
+    height: 80vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-text {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem 6rem 2rem 6rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.welcome-text h1 {
+    margin: 0;
+    font-size: 5rem;
+    color: #b35900;
+}
+
+.welcome-text h2 {
+    margin-top: -1.5rem;
+    font-size: 3.5rem;
+    color: #b35900;
+}
+
+.welcome-text img {
+    max-height: 40vh;
+    margin-top: -2rem;
+}
+
+/* About section */
+
+.about {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #ffeee5;
+}
+
+.about h2 {
+    font-size: 2rem;
+    color: #b35900;
+}
+
+.about p {
+    max-width: 650px;
+    font-size: 1.1rem;
+    margin: 1rem auto 0;
+}
+
+/* Products */
+
+.products {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-left: 20vw;
+    margin-right: 20vw;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #ffe0cc;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.02);
+}
+
+.product-card img {
+    width: 100%;
+    max-height: 270px;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    margin: 0.5rem 0;
+    color: #cc6600;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.product-card span {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: #b35900;
+}

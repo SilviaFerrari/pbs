@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 // login only
 @Controller
-public class AuthController {
+public class LoginController {
 
     @GetMapping("/login")
     public String showLoginForm(@RequestParam(value = "error", required = false) String error, Model model) {
