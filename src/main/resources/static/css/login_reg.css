@@ -7,6 +7,15 @@ body {
     background-size: cover;
 }
 
+.error {
+    background-color: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
 .container {
     max-width: 400px;
     margin: 80px auto;
@@ -24,7 +33,7 @@ body {
 
 .container label {
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     color: #3f2e25;
     font-weight: 500;
 }
@@ -32,7 +41,7 @@ body {
 .container input[type="text"],
 .container input[type="email"],
 .container input[type="password"] {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #d3c6b8;
@@ -43,7 +52,7 @@ body {
 
 .container button {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     background-color: #d97b4d;
     border: none;
     color: white;

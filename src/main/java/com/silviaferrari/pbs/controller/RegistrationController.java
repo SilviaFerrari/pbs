@@ -22,19 +22,27 @@ public class RegistrationController {
     }
 
     @PostMapping("/register")
-    public String registerUser(@ModelAttribute("user") @Valid User user, BindingResult result, Model model) {
+    public String registerUser(
+            @ModelAttribute("user") @Valid User user,
+            BindingResult result,
+            Model model) {
+
         if (result.hasErrors()) {
             return "register";
         }
 
-        // Controlla se username/email già esistono
+        // controlla se username/email già esistono
         if (userRepository.findByUsername(user.getUsername()).isPresent()) {
-            model.addAttribute("usernameError", "Username già esistente");
+            result.rejectValue("username", "error.user", "Username già esistente");
+            return "register";
+        }
+
+        if (userRepository.findByEmail(user.getEmail()).isPresent()) {
+            result.rejectValue("email", "error.user", "Email già registrata");
             return "register";
         }
 
         userService.registerUser(user);
-
         return "redirect:/login";
     }
 

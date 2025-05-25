@@ -9,21 +9,30 @@
 <div class="container">
     <h2>Registrazione</h2>
     <form th:action="@{/register}" method="post" th:object="${user}">
-        <label th:for="*{username}">Username:</label>
-        <input type="text" th:field="*{username}" required>
+        <label>
+            Username:
+            <input type="text" th:field="*{username}" required>
+        </label>
+        <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="error"></div>
 
-        <label th:for="*{email}">Email:</label>
-        <input type="email" th:field="*{email}" required>
+        <label>
+            Email:
+            <input type="email" th:field="*{email}" required>
+        </label>
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></div>
 
-        <label th:for="*{password}">Password:</label>
-        <input type="password" th:field="*{password}" required>
+        <label>
+            Password:
+            <input type="password" th:field="*{password}" required>
+        </label>
+        <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error"></div>
 
         <button type="submit">Registrati</button>
 
-        <!-- Mostra eventuali errori -->
+        <!-- Mostra eventuali errori
         <div th:if="${#fields.hasErrors('*')}">
             <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
-        </div>
+        </div>-->
     </form>
 
 </div>

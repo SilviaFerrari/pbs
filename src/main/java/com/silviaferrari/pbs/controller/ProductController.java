@@ -1,32 +1,33 @@
 package com.silviaferrari.pbs.controller;
 
-
 import com.silviaferrari.pbs.model.Product;
-import com.silviaferrari.pbs.repository.ProductRepository;
+import com.silviaferrari.pbs.service.ProductService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
-@RestController
-@RequestMapping("/api/products")
+@Controller
 public class ProductController {
+    private final ProductService productService;
 
-    private final ProductRepository productRepository;
-
-    public ProductController(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    public ProductController(ProductService productService) {
+        this.productService = productService;
     }
 
-    @GetMapping
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();
+    @GetMapping("/product/{id}")
+    public String showProduct(@PathVariable Long id, Model model) {
+        Product product = productService.getById(id);
+        if (product == null) {
+            return "redirect:/products"; // oppure una pagina di errore
+        }
+        model.addAttribute("product", product);
+        return "product";
     }
 
-    @GetMapping("/{id}")
-    public Product getProductById(@PathVariable Long id) {
-        return productRepository.findById(id).orElse(null);
+    @GetMapping("/products")
+    public String listProducts(Model model) {
+        model.addAttribute("products", productService.getAll());
+        return "products";
     }
 }
