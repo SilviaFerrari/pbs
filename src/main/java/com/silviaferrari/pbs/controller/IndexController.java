@@ -22,7 +22,6 @@ public class IndexController {
     @GetMapping("/")
     public String index(Model model) {
         System.out.println(">>> [HomeController] Caricamento della home page");
-
         List<Product> products = productRepository.findAll();  // prendi i prodotti
         model.addAttribute("products", products);  // passali alla vista
         return "index"; // renderizza index.html, non c'è bisogno di scrivere l'estensione

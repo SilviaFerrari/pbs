@@ -20,6 +20,21 @@
     border-radius: 1rem;
 }
 
+.logo {
+    font-weight: bold;
+    font-size: 1.7rem;
+    color: #cc6600;
+    text-decoration: none;
+}
+
+.title-logo h1{
+    font-family: 'Amatic SC', serif;
+}
+
+.title-logo h2 {
+    font-family: 'Allison', serif;
+}
+
 .welcome-text h1 {
     margin: 0;
     font-size: 5rem;
@@ -40,27 +55,41 @@
 /* About section */
 
 .about {
-    padding: 4rem 2rem;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
     text-align: center;
     background-color: #ffeee5;
 }
 
 .about h2 {
-    font-size: 2rem;
+    font-family: 'Amatic SC', serif;
+    font-size: 3.5rem;
     color: #b35900;
+    padding-bottom: 0;
 }
 
 .about p {
     max-width: 650px;
     font-size: 1.1rem;
     margin: 1rem auto 0;
+    line-height: 1.7;
+    /*font-family: 'Lexend', serif;
+    font-weight: 400;*/
 }
 
 /* Products */
+a {
+    text-decoration: none !important;
+}
 
 .products {
     padding: 4rem 2rem;
     text-align: center;
+}
+
+.products h2 {
+    font-family: 'Amatic SC', serif;
+    font-size: 3.5rem;
 }
 
 .product-grid {
@@ -97,6 +126,8 @@
 }
 
 .product-card p {
+    font-family: 'Lexend', serif;
+    font-weight: 300;
     font-size: 0.9rem;
     color: #555;
 }

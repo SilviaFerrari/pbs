@@ -14,6 +14,7 @@ public class LoginController {
         if (error != null) {
             model.addAttribute("loginError", "Credenziali non valide");
         }
+        System.out.println(">>> [Controller] Caricamento del login.");
         return "login";
     }
 }

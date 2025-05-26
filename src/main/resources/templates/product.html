@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{main-layout.html}">
 <head>
     <meta charset="UTF-8">
     <title th:text="${product.name} + ' - Panettoni by Silvia'">Prodotto</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/product.css}" />
 </head>
 <body>
-
+<section layout:fragment="content">
+    <div class="product-container">
+        <img th:src="@{${product.imageUrl}}" alt="Immagine prodotto" class="product-image" />
+        <div class="description">
+            <h2 th:text="${product.name}">Product name</h2>
+            <h1 th:text="'€ ' + ${product.price}">Product price</h1>
+            <p th:text="${product.description}">Product description</p>
+            <button>Add to Cart</button>
+            <button>Wishlist</button>
+        </div>
+    </div>
+</section>
 </body>
 </html>

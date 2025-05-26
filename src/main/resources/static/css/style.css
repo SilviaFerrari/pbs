@@ -10,19 +10,11 @@ body {
     align-content: center;
 }
 
-.title-logo {
-    font-family: 'Amatic SC', serif;
-}
-
-.title-logo h2 {
-    font-family: 'Allison', serif;
-}
-
 /* Navbar */
 
 .navbar {
     background-color: #fff3e6;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -35,11 +27,10 @@ body {
     align-items: center;
 }
 
-.logo {
-    font-weight: bold;
-    font-size: 1.7rem;
-    color: #cc6600;
-    text-decoration: none;
+.name-logo img{
+    height: 55px;
+    width: auto;
+    padding-bottom: 0;
 }
 
 .nav-menu {
@@ -56,6 +47,7 @@ body {
 
 .nav-menu a {
     font-size: 1.2rem;
+    text-decoration: none;
 }
 
 .nav-menu span{
@@ -81,8 +73,8 @@ body {
 }
 
 .btn-link:hover {
-    background-color: #e4b2b2;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #cc6600;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -123,7 +115,8 @@ body {
 }
 
 .footer-about p, .footer-contact p {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lexend', serif;
+    font-weight: 400;
     font-size: 1rem;
 }
 
@@ -132,6 +125,5 @@ body {
     text-align: center;
     margin-top: 20px;
     font-size: 1.3rem;
-    font-weight: 600;
     color: #ffffff;
 }

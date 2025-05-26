@@ -1,10 +1,8 @@
 .product-container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 2rem auto;
     padding: 1rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
+    font-family: 'Lexend', serif;
 }
 .product-image {
     max-width: 100%;
@@ -12,14 +10,30 @@
     object-fit: contain;
     border-radius: 8px;
     margin-bottom: 1rem;
+    float: left;
+    padding: 30px;
 }
 .product-details {
     text-align: left;
+    padding: 30px;
+    float: left;
+    width: 55%;
+    border-left: 2px solid #efefef;
 }
-.product-name {
+.product-name h1{
     font-size: 2rem;
-    margin-bottom: 0.5rem;
+    color: #515151;
+    font-weight: 300;
+    padding-top: 15px;
+    margin: 0;
 }
+.product-name h2 {
+    color: #515151;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
 .product-price {
     color: #e63946;
     font-weight: bold;
@@ -30,4 +44,27 @@
     font-size: 1.1rem;
     color: #555;
     line-height: 1.5;
+    padding: 20px 0;
+    margin: 0;
+}
+
+button {
+    outline: 0;
+    background: none;
+    border: 1px solid #d9d9d9;
+    padding: 8px 0px;
+    margin-bottom: 30px;
+    color: #515151;
+    text-transform: uppercase;
+    width: 125px;
+    font-family: inherit;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+button:hover {
+    border: 1px solid #cf325a;
+    color: #cf325a;
+    cursor: pointer;
 }

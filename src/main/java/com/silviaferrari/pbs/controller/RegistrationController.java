@@ -49,6 +49,7 @@ public class RegistrationController {
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
         model.addAttribute("user", new User());
+        System.out.println(">>> [Controller] Caricamento della registrazione.");
         return "register";
     }
 }

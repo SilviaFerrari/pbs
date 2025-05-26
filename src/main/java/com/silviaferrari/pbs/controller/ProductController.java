@@ -22,12 +22,14 @@ public class ProductController {
             return "redirect:/products"; // oppure una pagina di errore
         }
         model.addAttribute("product", product);
+        System.out.println(">>> [Controller] Caricamento della pagina del prodotto.");
         return "product";
     }
 
     @GetMapping("/products")
     public String listProducts(Model model) {
         model.addAttribute("products", productService.getAll());
-        return "products";
+        System.out.println(">>> [Controller] Caricamento del catalogo.");
+        return "catalog";
     }
 }

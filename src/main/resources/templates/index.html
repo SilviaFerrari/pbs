@@ -42,10 +42,12 @@
         <h2>I nostri prodotti</h2>
         <div class="product-grid">
             <div class="product-card" th:each="product : ${products}">
-                <img th:src="@{${product.imageUrl}}" th:alt="${product.name}"/>
-                <h3 th:text="${product.name}"></h3>
-                <p th:text="${product.description}"></p>
-                <span th:text="${product.price + ' €'}"></span>
+                <a th:href="@{/product/{id}(id=${product.id})}">
+                    <img th:src="@{${product.imageUrl}}" th:alt="${product.name}"/>
+                    <h3 th:text="${product.name}"></h3>
+                    <p th:text="${product.description}"></p>
+                    <span th:text="${product.price + ' €'}"></span>
+                </a>
             </div>
         </div>
     </section>
