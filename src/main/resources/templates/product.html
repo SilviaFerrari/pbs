@@ -10,13 +10,18 @@
 <body>
 <section layout:fragment="content">
     <div class="product-container">
-        <img th:src="@{${product.imageUrl}}" alt="Immagine prodotto" class="product-image" />
-        <div class="description">
-            <h2 th:text="${product.name}">Product name</h2>
-            <h1 th:text="'€ ' + ${product.price}">Product price</h1>
-            <p th:text="${product.description}">Product description</p>
-            <button>Add to Cart</button>
-            <button>Wishlist</button>
+        <div class="product-image">
+            <img th:src="@{${product.imageUrl}}" alt="Immagine prodotto" class="product-image" />
+        </div>
+        <div class="product-details">
+            <h1 th:text="${product.name}">Product name</h1>
+            <div class="price" th:text="'€ ' + ${product.price}">Product price</div>
+            <div class="description" th:text="${product.description}">Product description</div>
+            <div class="buttons">
+                <button>Add to Cart</button>
+                <button>Wishlist</button>
+            </div>
+            <p class="error" th:if="${#authorization.expression('!isAuthenticated()')}">Per aggiungere i prodotti al carrello e alla wishlist è necessaria la registrazione.</p>
         </div>
     </div>
 </section>

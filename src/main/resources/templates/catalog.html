@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{main-layout.html}">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <title th:text="${product.name}">Prodotto</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Catalogo</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
 </head>
 <body>
-<div class="product-card">
-    <img th:src="@{${product.imageUrl}}" alt="Immagine prodotto">
-    <h1 th:text="${product.name}">Nome Prodotto</h1>
-    <p th:text="${product.description}">Descrizione</p>
-    <p><strong>Categoria:</strong> <span th:text="${product.category}">Panettoni</span></p>
-    <p><strong>Prezzo:</strong> €<span th:text="${product.price}">0.00</span></p>
-    <button>Aggiungi al carrello</button>
-</div>
+<section layout:fragment="content">
+    <section class="products">
+        <h2>I nostri prodotti</h2>
+        <div class="product-grid">
+            <div class="product-card" th:each="product : ${products}">
+                <a th:href="@{/product/{id}(id=${product.id})}">
+                    <img th:src="@{${product.imageUrl}}" th:alt="${product.name}"/>
+                    <h3 th:text="${product.name}"></h3>
+                    <p th:text="${product.description}"></p>
+                    <span th:text="${product.price + ' €'}"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+</section>
 </body>
 </html>

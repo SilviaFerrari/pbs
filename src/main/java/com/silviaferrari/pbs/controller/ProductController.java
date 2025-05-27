@@ -26,7 +26,7 @@ public class ProductController {
         return "product";
     }
 
-    @GetMapping("/products")
+    @GetMapping("/catalog")
     public String listProducts(Model model) {
         model.addAttribute("products", productService.getAll());
         System.out.println(">>> [Controller] Caricamento del catalogo.");

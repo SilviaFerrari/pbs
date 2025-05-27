@@ -25,6 +25,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
 }
 
 .name-logo img{
@@ -47,7 +48,19 @@ body {
 
 .nav-menu a {
     font-size: 1.2rem;
-    text-decoration: none;
+    text-decoration: none !important;
+}
+
+.center-menu {
+    font-family: 'Lexend', serif;
+    font-weight: 400;
+    color: #3f2e25;
+    font-size: 1.1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    float: none;
+    position: absolute;
 }
 
 .nav-menu span{

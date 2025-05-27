@@ -1,70 +1,86 @@
 .product-container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 1rem;
+    display: flex;
+    max-width: 50%;
+    margin: 40px auto;
+    padding: 20px;
+    gap: 40px;
+    background-color: #f9f9f9;
     font-family: 'Lexend', serif;
-}
-.product-image {
-    max-width: 100%;
-    max-height: 400px;
-    object-fit: contain;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    float: left;
-    padding: 30px;
-}
-.product-details {
-    text-align: left;
-    padding: 30px;
-    float: left;
-    width: 55%;
-    border-left: 2px solid #efefef;
-}
-.product-name h1{
-    font-size: 2rem;
-    color: #515151;
-    font-weight: 300;
-    padding-top: 15px;
-    margin: 0;
-}
-.product-name h2 {
-    color: #515151;
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: 400;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.product-price {
-    color: #e63946;
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+/* Left column */
+.product-image {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.product-description {
+
+.product-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* Right column */
+.product-details {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+}
+
+.product-details h1 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 3rem;
+    margin: 0;
+    color: #cc6600;
+    font-weight: 600;
+}
+
+.product-details .price {
+    font-size: 1.5rem;
+    color: #662626;
+    font-weight: bold;
+}
+
+.product-details .description {
     font-size: 1.1rem;
     color: #555;
     line-height: 1.5;
-    padding: 20px 0;
-    margin: 0;
 }
 
-button {
+.product-container .buttons {
+    display: inline-block;
+}
+
+.product-details button {
     outline: 0;
-    background: none;
-    border: 1px solid #d9d9d9;
+    background: #ffffff;
     padding: 8px 0px;
-    margin-bottom: 30px;
+    margin-right: 5px;
     color: #515151;
-    text-transform: uppercase;
     width: 125px;
     font-family: inherit;
-    margin-right: 5px;
-    transition: all 0.3s ease;
     font-weight: 500;
+    text-transform: uppercase;
+    border: 1px solid #d9d9d9;
+    transition: all 0.3s ease;
 }
 
 button:hover {
     border: 1px solid #cf325a;
     color: #cf325a;
     cursor: pointer;
+}
+
+.product-container .error {
+    background-color: #dfdfdf;
+    color: #3e3e3e;
+    border: 1px solid #777777;
+    border-radius: 10px;
+    padding: 10px;
 }
