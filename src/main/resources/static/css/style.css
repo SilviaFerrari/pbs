@@ -65,8 +65,9 @@ body {
 
 .nav-menu span{
     margin: auto;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #662626;
+    font-family: "Lexend", serif;
 }
 
 /* Link as button */
@@ -124,6 +125,7 @@ body {
 .footer-about h3, .footer-contact h3 {
     font-family: 'Amatic SC', serif;
     font-size: 1.5rem;
+    color: #a52a2a;
     margin-bottom: 10px;
 }
 

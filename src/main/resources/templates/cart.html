@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{main-layout.html}">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrello</title>
+  <link rel="stylesheet" th:href="@{/css/cart.css}">
+</head>
+<body>
+<section layout:fragment="content">
+  <div class="cart-container">
+    <div th:if="${items.isEmpty()}">
+      <p class="empty">Ops! Non c'è nulla nel carrello...<br>
+        Affrettati o rimarrai a pancia vuota!</p>
+    </div>
+
+    <div th:unless="${items.isEmpty()}">
+      <table>
+        <thead>
+        <tr>
+          <th>Prodotto</th>
+          <th>Quantità</th>
+          <th>Prezzo</th>
+          <th>Totale</th>
+          <th>Azioni</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${items}">
+          <td th:text="${item.product.name}">Nome</td>
+          <td>
+            <form th:action="@{/cart/decrease/{id}(id=${item.product.id})}" method="post" style="display:inline">
+              <button class="quantity" type="submit">−</button>
+            </form>
+            <span th:text="${item.quantity}" style="margin: 0 10px;"></span>
+            <form th:action="@{/cart/increase/{id}(id=${item.product.id})}" method="post" style="display:inline">
+              <button class="quantity" type="submit">+</button>
+            </form>
+          </td>
+          <td th:text="${item.product.price}">Prezzo</td>
+          <td th:text="${item.product.price * item.quantity}">Totale</td>
+          <td>
+            <form th:action="@{/cart/remove/{id}(id=${item.product.id})}" method="post">
+              <button type="submit">Rimuovi</button>
+            </form>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h3 class="total">Totale: <span th:text="${total}"></span> €</h3>
+
+      <form th:action="@{/cart/clear}" method="post">
+        <button type="submit">Svuota Carrello</button>
+      </form>
+      <button type="submit">Procedi al pagamento</button>
+    </div>
+  </div>
+</section>
+</body>
+</html>

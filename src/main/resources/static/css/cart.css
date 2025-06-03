@@ -1,0 +1,119 @@
+.cart-container {
+    padding: 30px 5%;
+    background-color: #fffdf9;
+    color: #333;
+    font-family: 'Lexend', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-container .empty {
+    background-color: #dfdfdf;
+    color: #3e3e3e;
+    border: 1px solid #777777;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.cart-container h2,
+.cart-container h3 {
+    text-align: center;
+    color: #a52a2a;
+    margin-top: 20px;
+}
+
+.cart-container table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 108, 108, 0.2);
+}
+
+.cart-container thead {
+    background-color: #ffdfc4;
+}
+
+.cart-container th,
+.cart-container td {
+    padding-top: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-container tbody tr:hover {
+    background-color: #f9f2ec;
+}
+
+.cart-container button {
+    background-color: #a52a2a;
+    font-family: "Lexend", serif;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cart-container button:hover {
+    background-color: #7c1f1f;
+}
+
+.cart-container .quantity {
+    margin: 0 2px;
+    width: 30px;
+    padding: 5px 0;
+}
+
+.cart-container .total,
+.cart-container .empty-cart {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.cart-container form {
+    display: inline;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .cart-container table,
+    .cart-container thead,
+    .cart-container tbody,
+    .cart-container th,
+    .cart-container td,
+    .cart-container tr {
+        display: block;
+    }
+
+    .cart-container th {
+        display: none;
+    }
+
+    .cart-container td {
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .cart-container td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+    }
+
+    .cart-container .total {
+        text-align: center;
+    }
+}

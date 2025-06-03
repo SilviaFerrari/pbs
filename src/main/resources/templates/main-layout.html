@@ -23,6 +23,11 @@
       <ul class="nav-menu">
         <!-- Se l'utente è autenticato -->
         <li th:if="${#authorization.expression('isAuthenticated()')}">
+          <a href="/cart">
+            <img style="height: 2.3rem" src="/images/cart.png" alt="Carrello"/>
+          </a>
+        </li>
+        <li th:if="${#authorization.expression('isAuthenticated()')}">
           <span>Benvenuto, <strong th:text="${#authentication.name}">Utente</strong>!</span>
         </li>
         <li th:if="${#authorization.expression('isAuthenticated()')}">

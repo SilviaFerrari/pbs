@@ -83,10 +83,7 @@ a {
 }
 
 .products {
-    padding-top: 2rem;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    padding-bottom: 4rem;
+    padding: 2rem 2rem 4rem;
     text-align: center;
 }
 

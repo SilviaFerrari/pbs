@@ -18,8 +18,10 @@
             <div class="price" th:text="'€ ' + ${product.price}">Product price</div>
             <div class="description" th:text="${product.description}">Product description</div>
             <div class="buttons">
-                <button>Add to Cart</button>
-                <button>Wishlist</button>
+                <form th:action="@{/cart/add/{id}(id=${product.id})}" method="post">
+                    <button type="submit">Aggiungi al carrello</button>
+                </form>
+                <button>Preferiti</button>
             </div>
             <p class="error" th:if="${#authorization.expression('!isAuthenticated()')}">Per aggiungere i prodotti al carrello e alla wishlist è necessaria la registrazione.</p>
         </div>

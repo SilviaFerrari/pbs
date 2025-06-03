@@ -53,15 +53,18 @@
     line-height: 1.5;
 }
 
+/* Buttons cart & wishlist*/
+
 .product-container .buttons {
-    display: inline-block;
+    display: flex;
 }
 
 .product-details button {
+    display: inline;
     outline: 0;
     background: #ffffff;
     padding: 8px 0px;
-    margin-right: 5px;
+    margin-right: 20px;
     color: #515151;
     width: 125px;
     font-family: inherit;
