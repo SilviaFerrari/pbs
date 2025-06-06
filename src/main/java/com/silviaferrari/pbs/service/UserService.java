@@ -19,7 +19,6 @@ public class UserService {
         this.emailService = emailService;
     }
 
-    // cripta la password e salva
     public void save(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);

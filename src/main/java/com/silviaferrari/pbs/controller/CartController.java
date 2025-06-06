@@ -25,7 +25,7 @@ public class CartController {
     public String addToCart(@PathVariable Long id) {
         Product product = productService.getById(id);
         cartService.addProduct(product);
-        return "redirect:/cart";
+        return "redirect:/catalog";
     }
 
     @GetMapping

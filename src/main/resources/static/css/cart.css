@@ -33,7 +33,7 @@
 }
 
 .cart-container thead {
-    background-color: #ffdfc4;
+    background-color: #fff3e6;
 }
 
 .cart-container th,
@@ -45,24 +45,37 @@
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
-
+/*
 .cart-container tbody tr:hover {
-    background-color: #f9f2ec;
+    background-color: #ffffff;
+}
+*/
+.cart-container button {
+    outline: 0;
+    background: #ffffff;
+    padding: 8px 0px;
+    margin-right: 20px;
+    color: #515151;
+    width: 125px;
+    font-family: inherit;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: 1px solid #d9d9d9;
+    transition: all 0.3s ease;
 }
 
-.cart-container button {
-    background-color: #a52a2a;
-    font-family: "Lexend", serif;
-    color: white;
+button:hover {
+    border: 1px solid #cf325a;
+    color: #cf325a;
+    cursor: pointer;
+}
+
+.cart-container .trash {
+    background-color: rgba(255, 255, 255, 0);
     border: none;
-    padding: 10px 16px;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
-}
-
-.cart-container button:hover {
-    background-color: #7c1f1f;
 }
 
 .cart-container .quantity {

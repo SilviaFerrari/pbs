@@ -1,5 +1,7 @@
 .product-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 50%;
     margin: 40px auto;
     padding: 20px;
@@ -8,6 +10,20 @@
     font-family: 'Lexend', serif;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.flex-container>div {
+    margin: 30px;
+}
+
+.flex-container hr {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    margin: 10px;
+    border-color: #FFF;
+    box-shadow: none;
+    border-width: 5px;
 }
 
 /* Left column */
@@ -53,16 +69,6 @@
     line-height: 1.5;
 }
 
-/* Buttons cart & wishlist*/
-
 .product-container .buttons {
     display: flex;
-}
-
-.product-container .error {
-    background-color: #dfdfdf;
-    color: #3e3e3e;
-    border: 1px solid #777777;
-    border-radius: 10px;
-    padding: 10px;
 }

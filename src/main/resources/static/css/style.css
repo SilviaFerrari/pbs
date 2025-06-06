@@ -70,20 +70,47 @@ body {
     font-family: "Lexend", serif;
 }
 
+/* Generic style button */
+
+button {
+    display: inline;
+    outline: 0;
+    background: #ffffff;
+    color: #515151;
+    padding: 8px 0px;
+    margin-right: 20px;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    width: 125px;
+    font-family: inherit;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    border: 1px solid #cf325a;
+    color: #cf325a;
+    cursor: pointer;
+}
+
 /* Link as button */
 
 .btn-link {
+    display: inline-block;
     background-color: #f0c8c8;
     color: #662626;
     padding: 8px 18px;
+    margin-left: 10px;
+    margin-right: 0px;
+    border: 2px solid #e4b2b2;
     border-radius: 25px;
+    width: auto;
     font-family: 'Amatic SC', cursive;
     font-size: 20px;
     font-weight: 700;
+    text-transform: uppercase;
     transition: all 0.3s ease;
-    border: 2px solid #e4b2b2;
-    margin-left: 10px;
-    display: inline-block;
 }
 
 .btn-link:hover {

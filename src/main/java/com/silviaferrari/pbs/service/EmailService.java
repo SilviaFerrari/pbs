@@ -19,7 +19,14 @@ public class EmailService {
         message.setSubject("Benvenuto su Panettoni by Silvia!");
         message.setText("Ciao " + username + ",\n\nGrazie per esserti registrato sul nostro sito! " +
                 "🎉\n\nPanettoni by Silvia \n\nQuesta è una mail automatica, non rispondere. Per necessità contattare l'assistenza clienti.");
+        mailSender.send(message);
+    }
 
+    public void sendPaymentReceipt(String to, String cardholderName) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(to);
+        message.setSubject("Ricevuta pagamento - Ordine completato");
+        message.setText("Ciao " + cardholderName + ",\n\nGrazie per il tuo ordine! Il pagamento è stato ricevuto con successo.\n\nSaluti,\nTeam PBS");
         mailSender.send(message);
     }
 }

@@ -22,8 +22,8 @@
           <th>Prodotto</th>
           <th>Quantità</th>
           <th>Prezzo</th>
-          <th>Totale</th>
-          <th>Azioni</th>
+          <th>Parziale</th>
+          <th></th>
         </tr>
         </thead>
         <tbody>
@@ -42,19 +42,23 @@
           <td th:text="${item.product.price * item.quantity}">Totale</td>
           <td>
             <form th:action="@{/cart/remove/{id}(id=${item.product.id})}" method="post">
-              <button type="submit">Rimuovi</button>
+              <button class="trash" type="submit">
+                <img style="height: 2rem" src="/images/trash.png" alt="Rimuovi"/>
+              </button>
             </form>
           </td>
         </tr>
         </tbody>
       </table>
 
-      <h3 class="total">Totale: <span th:text="${total}"></span> €</h3>
+      <h3 class="total">Subtotale: <span th:text="${total}"></span> €</h3>
 
       <form th:action="@{/cart/clear}" method="post">
-        <button type="submit">Svuota Carrello</button>
+        <button  type="submit">Svuota Carrello</button>
       </form>
-      <button type="submit">Procedi al pagamento</button>
+      <form th:action="@{/orders/checkout}" method="get">
+        <button type="submit">Procedi all'ordine</button>
+      </form>
     </div>
   </div>
 </section>

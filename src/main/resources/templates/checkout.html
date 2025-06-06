@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{main-layout.html}">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" th:href="@{/css/checkout.css}" />
+</head>
+<body>
+<section layout:fragment="content">
+    <div class="product-container">
+        <h2>Riepilogo Ordine</h2>
+        <ul>
+            <li th:each="item : ${cartItems}">
+                <span th:text="${item.quantity}"></span>
+                <span th:text="${item.product.name}"></span>
+                <span th:text="${item.product.price}"></span>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <span>Totale: </span>
+                <span th:text="${total}"></span>
+                <span>&euro;</span>
+            </li>
+        </ul>
+        <form class="product-details" method="post" th:action="@{/orders/confirm}">
+            <button type="submit">Conferma e Paga</button>
+        </form>
+        <form class="product-details" method="post" th:action="@{/orders/cancel-cart}">
+            <button type="submit">Cancella Ordine</button>
+        </form>
+    </div>
+</section>
+</body>
+</html>

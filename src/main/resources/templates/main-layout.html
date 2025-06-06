@@ -21,6 +21,7 @@
         CATALOGO
       </a>
       <ul class="nav-menu">
+
         <!-- Se l'utente è autenticato -->
         <li th:if="${#authorization.expression('isAuthenticated()')}">
           <a href="/cart">

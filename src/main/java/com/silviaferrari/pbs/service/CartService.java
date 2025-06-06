@@ -5,9 +5,8 @@ import com.silviaferrari.pbs.model.Product;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.math.BigDecimal;
+import java.util.*;
 
 @Service
 @SessionScope
@@ -27,6 +26,10 @@ public class CartService {
         return items.values();
     }
 
+    public List<CartItem> getCartItems() {
+        return new ArrayList<>(items.values());
+    }
+
     public void removeProduct(Long productId) {
         items.remove(productId);
     }
@@ -35,10 +38,10 @@ public class CartService {
         items.clear();
     }
 
-    public double getTotal() {
+    public BigDecimal getTotal() {
         return items.values().stream()
-                .mapToDouble(item -> item.getProduct().getPrice() * item.getQuantity())
-                .sum();
+                .map(item -> item.getProduct().getPrice().multiply(BigDecimal.valueOf(item.getQuantity())))
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     public void increaseQuantity(Long productId) {

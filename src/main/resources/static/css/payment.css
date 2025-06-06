@@ -1,0 +1,74 @@
+.payment-container {
+    font-family: 'Lexend', sans-serif;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem 2.5rem;
+    border-radius: 8px;
+}
+
+/* Titolo pagina */
+.payment-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #222;
+}
+
+/* Campi del form */
+.payment-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.payment-form input[type="text"],
+.payment-form input[type="number"],
+.payment-form input[type="email"],
+.payment-form input[type="tel"],
+.payment-form input[type="submit"],
+.payment-form select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.payment-form input:focus,
+.payment-form select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.payment-form button{
+    background-color: #cf325a;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    margin: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.payment-form button:hover{
+    background-color: white;
+    color: #cf325a;
+}
+
+/* Messaggi di errore */
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: -0.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .payment-container {
+        padding: 1.5rem;
+    }
+}

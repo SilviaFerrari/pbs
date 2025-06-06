@@ -31,7 +31,6 @@ public class RegistrationController {
             return "register";
         }
 
-        // controlla se username/email già esistono
         if (userRepository.findByUsername(user.getUsername()).isPresent()) {
             result.rejectValue("username", "error.user", "Username già esistente");
             return "register";
